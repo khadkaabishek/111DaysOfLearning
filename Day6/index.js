@@ -12,16 +12,12 @@ app.get("/users", (req, res) => {
     `;
   res.send(html);
 });
-
 //renderring specific  user data in json format  // uses : to indicate dynamism
 app.get("/api/users/:id", (req, res) => {
   const id = Number(req.params.id);
   const Userdata = data.find((user) => user.id === id);
   res.json(Userdata);
 });
-
-// routing multiple methods in single path with short line of code
-
 //Middleware Plugin
 app.use(express.urlencoded({ extended: false }));
 
@@ -51,9 +47,9 @@ app
 
     if (userIndex !== -1) {
       data[userIndex] = {
-        ...data[userIndex], // existing data
-        ...body, // overwrite fields with new data
-        id: nID, // ensure `id` remains a number, not string
+        ...data[userIndex], 
+        ...body,
+        id: nID,
       };
     }
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(data), (err) => {
@@ -63,11 +59,7 @@ app
         return res.json({ status: "success", id: nID });
       }
     });
-  })
-  .delete((req, res) => {
-    return res.json({ status: "Pending" });
   });
-
 app.listen(PORT, () => {
   console.log(`Server Started at Port : ${PORT}`);
 });
