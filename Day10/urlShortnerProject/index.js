@@ -1,17 +1,23 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const URLRoute = require("./routes/url");
+const bodyParser = require("body-parser");
+
 const app = express();
-const urlRoute = require("./routes/url");
-PORT = 3000;
+const PORT = 3000;
 
-const { handleConnectMongoDB } = require("./connection");
+app.use(bodyParser.json());
 
-handleConnectMongoDB("mongodb://127.0.0.1:27017/urlShortner")
-  .then(() => console.log("MongoDB connected"))
+mongoose
+  .connect("mongodb://127.0.0.1:27017/urlShortner")
+  .then(() => {
+    console.log("MongoDB connected");
+  })
   .catch((err) => {
-    console.log(`Error : ${err}`);
+    console.error("MongoDB connection error:", err);
   });
-app.use(express.json());
-app.use("/url", urlRoute);
+
+app.use("/url", URLRoute);
 
 app.listen(PORT, () => {
   console.log(`Server Started at PORT :${PORT}`);

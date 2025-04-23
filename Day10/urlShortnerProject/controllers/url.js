@@ -1,18 +1,29 @@
 const shortid = require("shortid");
-const URL = require("./../models/url.js");
-const mongoose = require("mongoose");
+const URL = require("../models/url");
+
 async function generateNewShortURL(req, res) {
   const body = req.body;
-  // console.log(body);
-  if (!body) return res.status(400).json({ err: "url is required" });
+  if (!body.url) {
+    return res.status(400).json({ error: "URL is required" });
+  }
+
   const shortID = shortid();
 
-  await URL.create({
-    urlID: shortID,
-    redirectURL: body.url,
-    visitHistory: [],
-  });
-  // console.log(URL);
-  return res.json({ id: shortID });
+  try {
+    const newEntry = await URL.create({
+      urlID: shortID,
+      redirectURL: body.url,
+      visitHistory: [],
+    });
+
+    return res.json({
+      id: shortID,
+      shortURL: `http://localhost:3000/${shortID}`,
+    });
+  } catch (err) {
+    console.error("Error creating short URL:", err);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 }
+
 module.exports = { generateNewShortURL };
