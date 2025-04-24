@@ -16,9 +16,17 @@ async function generateNewShortURL(req, res) {
       visitHistory: [],
     });
 
-    return res.json({
-      id: shortID,
-      shortURL: `http://localhost:3000/${shortID}`,
+    // return res.json({
+    //   id: shortID,
+    //   shortURL: `http://localhost:3000/url/${shortID}`,
+    //   totalclicks: newEntry.visitHistory.length,
+    // });
+    return res.render("home", {
+      data: {
+        id: shortID,
+        shortURL: `http://localhost:3000/url/${shortID}`,
+        totalclicks: newEntry.visitHistory.length,
+      },
     });
   } catch (err) {
     console.error("Error creating short URL:", err);

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #2a3a4b;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(180,200,255,0.09);
+}
+
+.ShortURL, .History {
+  background: #fff;
+  padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+  margin-top: 28px;
+  border-radius: 1.1rem;
+  box-shadow: 0 4px 22px 0 rgba(60, 100, 180, 0.09), 0 1.5px 2.5px 0 rgba(0,0,0,0.03);
+  width: 92%;
+  max-width: 680px;
+  transition: box-shadow 0.18s;
+}
+
+.ShortURL:hover, .History:hover {
+  box-shadow: 0 8px 36px 0 rgba(60, 100, 180, 0.13), 0 2px 4px 0 rgba(0,0,0,0.04);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+label {
+  font-weight: 600;
+  color: #1f2d3d;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #b6c6e0;
+  border-radius: 7px;
+  font-size: 1.07rem;
+  background: #f7faff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #5c8df6;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+
+button {
+  padding: 0.75rem 0;
+  background: linear-gradient(90deg, #5c8df6 0%, #4e54c8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(80,120,255,0.09);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #4e54c8 0%, #5c8df6 100%);
+  box-shadow: 0 4px 16px rgba(80,120,255,0.13);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 14px;
+  background: #f6f8fa;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(40,60,120,0.06);
+}
+
+th, td {
+  border-bottom: 1px solid #e4eaf3;
+  padding: 13px 13px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+th {
+  background: #eaf1fb;
+  color: #34495e;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f1f6ff;
+  transition: background 0.13s;
+}
+
+p {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a9442;
+  background: #e9fbe9;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+@media (max-width: 650px) {
+  .ShortURL, .History {
+    padding: 1.1rem 0.7rem;
+    max-width: 98vw;
+  }
+
+  input[type="text"], button {
+    font-size: 0.98rem;
+  }
+
+  th, td {
+    padding: 9px 6px;
+    font-size: 0.97rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <h2>Welcome to URL Shortener</h2>
+  <div class="ShortURL">
+    <form method="POST" action="/url">
+      <label for="url">Enter your URL</label>
+      <input id="url" name="url" type="text" placeholder="https://www.example.com" required />
+      <button type="submit">Generate</button>
+    </form>
+
+    <% if (locals.data) { %>
+      <p>Shortened URL is <a href="<%= data.shortURL  %>"><%= data.shortURL  %></a> </p>
+    <% } %>
+  </div>
+
+  <% if (locals.htmlData) { %>
+  <div class="History">
+    <h3>History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Short ID</th>
+          <th>Generated URL</th>
+          <th>Redirect URL</th>
+          <th>No. of Clicks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% htmlData.forEach(url => { %>
+          <tr>
+            <td><%= url.urlID %></td>
+            <td> <a href="<%= `http://localhost:3000/url/${url.urlID}` %>">http://localhost:3000/url <%= url.urlID %>/</a></td>
+            <td><%= url.redirectURL %></td>
+            <td><%= url.visitHistory.length %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <% } %>
+
+</body>
+</html>
