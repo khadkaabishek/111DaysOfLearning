@@ -6,7 +6,7 @@ const signupRoute = require("./routes/signup");
 const loginRoute = require("./routes/login");
 const home = require("./routes/home");
 const cookieParser = require("cookie-parser");
-const { forceAuthentication } = require("./controller/home");
+const { forceAuthentication, checkAuth } = require("./controller/home");
 const path = require("path");
 const { json } = require("stream/consumers");
 
@@ -22,9 +22,10 @@ app.set("views", path.resolve("./views"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
+
 app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
-app.use("/", forceAuthentication, home);
+app.use("/", forceAuthentication, checkAuth, home);
 
 app.listen(PORT, () => {
   console.log(`Server Started at Port ${PORT}`);

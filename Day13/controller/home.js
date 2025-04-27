@@ -2,12 +2,14 @@ const { getUser } = require("../service/auth");
 const UserData = require("./../models/user");
 
 async function handleHome(req, res) {
-  const email = await UserData.find({ email: req.user._id });
+  if (!req.user) return res.redirect("login");
+  console.log(req.user);
+
+  const user = await UserData.findOne({ _id: req.user._id });
+  console.log(user);
+
   return res.render("home", {
-    userData: {
-      name: UserData.userName,
-      email: email,
-    },
+    userData: user,
   });
 }
 async function forceAuthentication(req, res, next) {
@@ -22,5 +24,13 @@ async function forceAuthentication(req, res, next) {
   req.user = user;
   next();
 }
+async function checkAuth(req, res, next) {
+  const userUid = req.cookies?.uid;
 
-module.exports = { handleHome, forceAuthentication };
+  const user = getUser(userUid);
+
+  req.user = user;
+  next();
+}
+
+module.exports = { handleHome, forceAuthentication, checkAuth };

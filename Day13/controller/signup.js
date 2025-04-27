@@ -12,8 +12,8 @@ async function handleSignup(req, res) {
       email: body.email,
       password: body.password,
     });
-    console.log(user);
-    return res.redirect("/");
+    // console.log(user);
+    return res.redirect("/login");
   } catch (err) {
     console.error("Error creating short URL:", err);
     return res.status(500).json({ error: "Internal server error" });
@@ -25,12 +25,17 @@ async function handleLogin(req, res) {
   // console.log(body);
   const { email, password } = body;
   const userMatch = await user.findOne({ email, password });
+  console.log(userMatch);
+  // if (userMatch) {
+  //   req.session.user = userMatch;
+  // }
   if (!userMatch)
     return res.render("login", { msg: "User not found with that id password" });
+
   const sessionId = uuidv4();
   setUser(sessionId, userMatch);
   // console.log(req.cookie);
-  console.log(sessionId);
+  // console.log(sessionId);
   res.cookie("uid", sessionId);
   return res.redirect("/");
 }
