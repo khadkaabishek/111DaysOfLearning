@@ -32,7 +32,7 @@ app.use(checkForAuthorization);
 app.use("/admin", restrictTo(["ADMIN"]), adminRoute);
 app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
-app.use("/", restrictTo(["NORMAL"]), home);
+app.use("/", restrictTo(["ADMIN", "NORMAL"]), home);
 
 app.listen(PORT, () => {
   console.log(`Server Started at Port ${PORT}`);
