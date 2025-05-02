@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  },
+  "name": "day19",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
