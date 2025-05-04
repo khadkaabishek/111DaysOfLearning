@@ -1,4 +1,4 @@
-// app.js
+
 const db = require("./connection");
 
 const sql1 = `
