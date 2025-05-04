@@ -1,0 +1,40 @@
+-- Users table
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100)
+);
+
+-- Orders table with foreign key
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  product_name VARCHAR(100),
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Insert into users
+INSERT INTO users (name, email) VALUES ('Abishek', 'abishek@example.com'), ('Bibek', 'bibek@example.com');
+
+-- Insert into orders
+INSERT INTO orders (product_name, user_id) VALUES ('Laptop', 1), ('Phone', 1), ('Tablet', 2);
+
+INSERT INTO users (name, email) VALUES
+('Sita Sharma', 'sita@example.com'),
+('Ram Thapa', 'ram@example.com'),
+('Bikash Gurung', 'bikash@example.com'),
+('Anita Karki', 'anita@example.com'),
+('Dipesh Lama', 'dipesh@example.com');
+
+
+INSERT INTO orders (product_name, user_id) VALUES
+('Laptop', 1),
+('Mobile Phone', 1),
+('TV', 2),
+('Refrigerator', 3),
+('Microwave', 3),
+('Washing Machine', 3),
+('Tablet', 4),
+('Camera', 5),
+('Printer', 5),
+('Headphones', 5);
