@@ -53,14 +53,13 @@ userSchema.static("PasswordMatchCheck", async function (email, password) {
   const user = await this.findOne({ email });
   if (!user) throw new Error("User not found!");
   const salt = user.salt;
-  console.log(salt);
+  // console.log(salt);
   const hashedPassword = user.password;
   const userProvidedHash = createHmac("sha256", salt)
     .update(password)
     .digest("hex");
 
   if (userProvidedHash == hashedPassword) return this;
-  // else return res.end("wrong password");
 });
 const User = model("user", userSchema);
 module.exports = User;
