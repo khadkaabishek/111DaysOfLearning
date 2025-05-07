@@ -5,8 +5,8 @@ const router = express();
 router.get("/signup", (req, res) => {
   return res.render("signup");
 });
-router.get("/signout", (req, res) => {
-  return res.render("signout");
+router.get("/signin", (req, res) => {
+  return res.render("signin");
 });
 router.post("/signup", async (req, res) => {
   const { full_name, email, password } = req.body;
@@ -19,4 +19,11 @@ router.post("/signup", async (req, res) => {
   return res.redirect("/");
 });
 
+router.post("/signin", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.PasswordMatchCheck(email, password);
+  console.log(user);
+  if (!user) return;
+  return res.redirect("/");
+});
 module.exports = router;
