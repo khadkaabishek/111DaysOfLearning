@@ -10,7 +10,9 @@
           margin: 2rem auto;
           padding: 0 1rem;
         }
-    
+        body{
+            background-color: rgb(40, 81, 62);
+        }
         .blog-card {
           border: 1px solid #ccc;
           border-radius: 10px;
@@ -46,19 +48,23 @@
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <p>READ the Latest Blogs !!</p>
     <div class="blog-container">
         <% blogs.forEach(blog => { %>
           <div class="blog-card">
-            <img src="<%= blog.coverImage %>" alt="Cover Image" class="blog-image">
+            <div class="blog-meta"> 
+                <img src="<%= user.profileImageUrl %>" alt="" width="50px">
+                <strong><%= user.full_Name %></strong> on 
+                <%= new Date(blog.createdAt).toUTCString() %>
+              </div>
+            <img src="<%= blog.coverImageUrl %>" alt="Cover Image" class="blog-image">
             <div class="blog-content">
               <h2 class="blog-title"><%= blog.title %></h2>
               <p class="blog-body"><%= blog.body %></p>
+              <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
             </div>
           </div>
         <% }); %>
       </div>
-
 </body>
 <%- include('./partials/scripts.ejs') %>
 </html>

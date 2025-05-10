@@ -3,11 +3,54 @@
 <head>
     <%- include('./partials/head.ejs') %>
     <title>Home</title>
+    <style>
+        .hero {
+            background: url("/images/hero.jpg") center/cover no-repeat;
+            color: rgb(38, 0, 253);
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        body{
+            background-color: rgb(40, 81, 62);
+        }
+    
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #b8cc76;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <p>HomePage</p>
-    <p><%= JSON.stringify(user) %></p>
+
+    <div class="hero">
+        <h1>Welcome to Blogger</h1>
+        <p>Discover inspiring stories, breathtaking moments, and the code that powers creativity.</p>
+        <a href="/blog/our-blogs"><button class="cta-button">Read Our Blogs</button></a>
+    </div>
+
+    <%- include('./partials/scripts.ejs') %>
 </body>
-<%- include('./partials/scripts.ejs') %>
 </html>

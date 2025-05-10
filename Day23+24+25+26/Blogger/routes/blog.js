@@ -22,13 +22,20 @@ router.get("/add-new", (req, res) => {
 router.get("/our-blogs", async (req, res) => {
   const ourBlog = await Blog.find({});
 
-  console.log(Blog.coverImageUrl);
+  console.log(ourBlog[0].coverImageUrl);
   return res.render("ourBlog", {
     blogs: ourBlog,
+    user: req.user,
   });
 });
 
-
+router.get("/:id", async (req, res) => {
+  const clickedBlog = await Blog.findById(req.params.id);
+  return res.render("clickedBlog", {
+    blog: clickedBlog,
+    user: req.user,
+  });
+});
 
 router.post("/add-new", upload.single("coverImage"), async (req, res) => {
   const body = req.body;
@@ -39,7 +46,7 @@ router.post("/add-new", upload.single("coverImage"), async (req, res) => {
     coverImageUrl: `/coverimages/${req.file.filename}`,
     createdBy: req.user._id,
   });
-  return res.redirect("/");
+  return res.redirect("/ourBlog");
 });
 
 module.exports = router;

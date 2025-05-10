@@ -8,8 +8,7 @@ const cookieParser = require("cookie-parser");
 const { checkForAuthentication } = require("./middleware/auth");
 const blogRoute = require("./routes/blog");
 const profileRoute = require("./routes/yourProfile");
-
-
+const Blog = require("./models/blog");
 HandleMongoDB("mongodb://127.0.0.1:27017/Blogger")
   .then(() => {
     console.log("Connected");
@@ -27,9 +26,11 @@ app.use("/profile", profileRoute);
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
-app.get("/", (req, res) => {
-  return res.render("home", {
+app.get("/", async (req, res) => {
+  const blog = await Blog.find({});
+  return res.render("ourBlog", {
     user: req.user,
+    blogs: blog,
   });
 });
 
