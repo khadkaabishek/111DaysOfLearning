@@ -8,7 +8,6 @@
         background-color: #f4f4f4;
         padding: 20px;
       }
-  
       .form-container {
         background-color: #fff;
         padding: 25px;
@@ -67,8 +66,7 @@
         <h2>Create a New Post</h2>
         <form action="/blog/add-new" method="POST" enctype="multipart/form-data" >
           <label for="coverImage">Upload Cover Image (optional)</label>
-          <input type="file" id="coverImage" name="coverImage" accept="image/*">
-    
+          <input type="file" id="coverImage" name="coverImage" accept="image/*" 
           <label for="title">Title</label>
           <input type="text" id="title" name="title" required>
     
@@ -78,7 +76,6 @@
         </form>
       </div>
 
-    <p><%= JSON.stringify(user) %></p>
 </body>
 <%- include('./partials/scripts.ejs') %>
 </html>

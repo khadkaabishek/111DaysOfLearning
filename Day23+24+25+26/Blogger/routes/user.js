@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/user");
+const { generateToken } = require("../services/authentication");
 const router = express();
 
 router.get("/signup", (req, res) => {
@@ -16,13 +17,16 @@ router.post("/signup", async (req, res) => {
     email: email,
     password: password,
   });
-  req.user = user;
-  return res.redirect("/");
+  // req.user = user;
+  console.log(user);
+  const token = generateToken(user);
+  // const token = "";
+
+  return res.cookie("token", token).redirect("/");
 });
 
 router.post("/signin", async (req, res) => {
   const { email, password } = req.body;
-
   try {
     const token = await User.PasswordMatchCheckAndTokenGenerate(
       email,

@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/blog/">Our Blogs</a>
+            <a class="nav-link" href="/blog/our-blogs">Our Blogs</a>
           </li>
           <% if (locals.user) { %>
             <li class="nav-item">
@@ -18,18 +18,21 @@
             </li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
               >
               <%= user.full_Name %>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
-              </ul>
-            </li>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Your Profile</a>
+          </li>
             <% } else {%>
             <li class="nav-item">
               <a class="nav-link" href="/user/signup">Create Account</a>
