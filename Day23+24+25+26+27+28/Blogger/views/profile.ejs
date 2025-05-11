@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Home</title>
+    <style>
+        .profile-page {
+          display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+         height: 100vh;
+         background-color: rgb(40, 81, 62);
+}
+
+.profile-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #e0e0e0;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.profile-info {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+      </style>
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+
+    <div class="profile-page">
+        <div class="profile-card">
+            <img src="<%= locals.user.profileImageUrl %>" alt="Profile Image" class="profile-image">
+
+          <h2 class="profile-name"><%= user.full_Name %></h2>
+          <p class="profile-info"><strong>ID:</strong> <%= user._id %></p>
+          <p class="profile-info"><strong>Email:</strong> <%= user.email %></p>
+        </div>
+      </div>
+
+      <a href=""></a>
+</body>
+<%- include('./partials/scripts.ejs') %>
+</html>
