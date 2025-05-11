@@ -52,8 +52,10 @@
         <% blogs.forEach(blog => { %>
           <div class="blog-card">
             <div class="blog-meta"> 
-                <img src="<%= user.profileImageUrl %>" alt="" width="50px">
-                <strong><%= user.full_Name %></strong> on 
+             
+              <img src="<%= blog.createdBy.profileImageUrl %>" alt="" width="50px">
+              <strong><%= blog.createdBy.full_Name %></strong>
+               on 
                 <%= new Date(blog.createdAt).toUTCString() %>
               </div>
             <img src="<%= blog.coverImageUrl %>" alt="Cover Image" class="blog-image">

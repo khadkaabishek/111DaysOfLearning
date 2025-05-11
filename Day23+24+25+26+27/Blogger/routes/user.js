@@ -22,7 +22,7 @@ router.post("/signup", async (req, res) => {
   const token = generateToken(user);
   // const token = "";
 
-  return res.cookie("token", token).redirect("/ourBlog");
+  return res.cookie("token", token).redirect("/blog/our-blogs");
 });
 
 router.post("/signin", async (req, res) => {

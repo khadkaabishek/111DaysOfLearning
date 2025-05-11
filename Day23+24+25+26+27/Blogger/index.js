@@ -9,6 +9,8 @@ const { checkForAuthentication } = require("./middleware/auth");
 const blogRoute = require("./routes/blog");
 const profileRoute = require("./routes/yourProfile");
 const Blog = require("./models/blog");
+const UserData = require("./models/user");
+
 HandleMongoDB("mongodb://127.0.0.1:27017/Blogger")
   .then(() => {
     console.log("Connected");
@@ -27,10 +29,16 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 
 app.get("/", async (req, res) => {
-  const blog = await Blog.find({});
+  const ourBlog = await Blog.find({}).populate(
+    "createdBy",
+    "full_Name profileImageUrl"
+  );
+  console.log(ourBlog);
+  const userdata = await UserData.find({});
   return res.render("ourBlog", {
-    user: req.user,
-    blogs: blog,
+    loggedInUser: req.user,
+    user: userdata,
+    blogs: ourBlog,
   });
 });
 
