@@ -28,7 +28,6 @@ router.get("/our-blogs", async (req, res) => {
   );
   console.log(ourBlog);
   const allUser = await User.find({});
-
   console.log(allUser);
   return res.render("ourBlog", {
     loggedInUser: req.user,
@@ -45,7 +44,12 @@ router.get("/:id", async (req, res) => {
       "createdBy",
       "full_Name profileImageUrl"
     );
-    console.log(owner);
+    const comments = await Comment.find({ blog: req.params.id }).populate(
+      "createdBy",
+      "full_Name profileImageUrl"
+    );
+
+    console.log(comments[0]);
     if (!clickedBlog || !owner) {
       return res.status(404).send("Blog or User not found");
     }
@@ -54,6 +58,7 @@ router.get("/:id", async (req, res) => {
       loggedInUser: req.user,
       blog: clickedBlog,
       user: owner,
+      comments: comments,
     });
   } catch (error) {
     console.error("Error loading blog/user:", error);
@@ -62,24 +67,13 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/:id", async (req, res) => {
-  try {
-    const clickedBlog = await Blog.findById({ _id: req.params.id });
-    const owner = await Blog.findById(req.params.id).populate(
-      "createdBy",
-      "full_Name profileImageUrl"
-    );
-    const comment = await Comment.create({
-      comment: req.comment,
-    });
-    return res.render("clickedBlog", {
-      loggedInUser: req.user,
-      blog: clickedBlog,
-      user: owner,
-    });
-  } catch (error) {
-    console.error("Error loading blog/user:", error);
-    res.status(500).send("Server error");
-  }
+  await Comment.create({
+    comment: req.body.comment,
+    blog: req.params.id,
+    createdBy: req.user,
+  });
+  // console.log(id);
+  return res.redirect(`/blog/${req.params.id}`);
 });
 
 router.post("/add-new", upload.single("coverImage"), async (req, res) => {

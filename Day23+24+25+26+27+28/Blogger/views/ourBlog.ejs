@@ -4,69 +4,160 @@
     <%- include('./partials/head.ejs') %>
     <title>Read-Blogs</title>
     <style>
-        /* Scoped blog styles */
-        .blog-container {
-          max-width: 800px;
-          margin: 2rem auto;
-          padding: 0 1rem;
+        body {
+            background: linear-gradient(135deg, #295e4e 0%, #2e8b57 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
         }
-        body{
-            background-color: rgb(40, 81, 62);
+        .blog-container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
         .blog-card {
-          border: 1px solid #ccc;
-          border-radius: 10px;
-          margin-bottom: 2rem;
-          overflow: hidden;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-          background: #fff;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            overflow: hidden;
+            transition: transform 0.18s, box-shadow 0.18s;
+            display: flex;
+            flex-direction: column;
+            border: none;
+            position: relative;
         }
-    
+        .blog-card:hover {
+            transform: translateY(-4px) scale(1.012);
+            box-shadow: 0 8px 36px rgba(44,62,80,0.13);
+        }
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.98rem;
+            color: #6b7a7f;
+            padding: 1rem 1.5rem 0.5rem 1.5rem;
+        }
+        .author-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2e8b57;
+        }
+        .author-name {
+            font-weight: 600;
+            color: #22482a;
+        }
         .blog-image {
-          width: 100%;
-          height: auto;
-          max-height: 400px;
-          object-fit: cover;
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            box-shadow: 0 1px 10px rgba(44,62,80,0.07);
         }
-    
         .blog-content {
-          padding: 1rem;
+            padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            flex: 1;
         }
-    
         .blog-title {
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
-          color: #333;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #22482a;
+            margin: 0 0 0.3rem 0;
+            letter-spacing: 0.01em;
         }
-    
         .blog-body {
-          font-size: 1rem;
-          color: #555;
+            color: #32443b;
+            font-size: 1.02rem;
+            line-height: 1.4;
+            max-height: 3.5em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
         }
-      </style>
-    
+        .blog-body:after {
+            content: '';
+            position: absolute;
+            right: 0; bottom: 0; left: 0;
+            height: 1.2em;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 100%);
+            pointer-events: none;
+        }
+        .view-btn {
+            display: inline-block;
+            align-self: flex-start;
+            margin-top: 0.7rem;
+            padding: 0.5rem 1.3rem;
+            background: linear-gradient(90deg, #1e8449 70%, #4ac29a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 6px rgba(46,139,87,0.08);
+            cursor: pointer;
+        }
+        .view-btn:hover {
+            background: linear-gradient(90deg, #4ac29a 0%, #1e8449 100%);
+            box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+        }
+
+        /* Responsive: 2 columns on tablets, 1 on mobile */
+        @media (max-width: 950px) {
+            .blog-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 650px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+                padding: 0 0.2rem;
+            }
+            .blog-card {
+                border-radius: 10px;
+            }
+            .blog-meta, .blog-content {
+                padding-left: 0.7rem;
+                padding-right: 0.7rem;
+            }
+            .blog-title {
+                font-size: 1rem;
+            }
+            .blog-image {
+                max-height: 130px;
+            }
+        }
+    </style>
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <div class="blog-container">
-        <% blogs.forEach(blog => { %>
-          <div class="blog-card">
-            <div class="blog-meta"> 
-             
-              <img src="<%= blog.createdBy.profileImageUrl %>" alt="" width="50px">
-              <strong><%= blog.createdBy.full_Name %></strong>
-               on 
-                <%= new Date(blog.createdAt).toUTCString() %>
-              </div>
-            <img src="<%= blog.coverImageUrl %>" alt="Cover Image" class="blog-image">
-            <div class="blog-content">
-              <h2 class="blog-title"><%= blog.title %></h2>
-              <p class="blog-body"><%= blog.body %></p>
-              <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        <% }); %>
-      </div>
+    <main>
+        <section class="blog-container">
+            <% blogs.forEach(blog => { %>
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <img src="<%= blog.createdBy.profileImageUrl %>" alt="Author" class="author-img">
+                        <span class="author-name"><%= blog.createdBy.full_Name %></span>
+                        <span>on <%= new Date(blog.createdAt).toUTCString() %></span>
+                    </div>
+                    <img src="<%= blog.coverImageUrl %>" alt="Cover Image" class="blog-image">
+                    <div class="blog-content">
+                        <h2 class="blog-title"><%= blog.title %></h2>
+                        <div class="blog-body"><%= blog.body %></div>
+                        <a href="/blog/<%= blog._id %>" class="view-btn">View</a>
+                    </div>
+                </article>
+            <% }); %>
+        </section>
+    </main>
+    <%- include('./partials/scripts.ejs') %>
 </body>
-<%- include('./partials/scripts.ejs') %>
 </html>
