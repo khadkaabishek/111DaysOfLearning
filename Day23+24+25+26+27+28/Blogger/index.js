@@ -27,6 +27,7 @@ app.use("/blog", blogRoute);
 app.use("/profile", profileRoute);
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", async (req, res) => {
   const ourBlog = await Blog.find({}).populate(

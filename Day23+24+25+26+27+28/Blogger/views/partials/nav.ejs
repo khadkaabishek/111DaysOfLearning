@@ -1,20 +1,29 @@
-<nav class="custom-navbar">
+<nav class="custom-navbar" role="navigation" aria-label="Main navigation">
   <div class="container">
-    <a href="/" class="brand">Bloggg</a>
+    <!-- Brand Logo / Title -->
+    <a href="/" class="brand" aria-label="Homepage">Bloggg</a>
 
+    <!-- Navigation Links -->
     <div class="nav-links" id="nav-links">
       <a href="/blog/our-blogs" class="nav-link">Our Blogs</a>
 
       <% if (locals.loggedInUser) { %>
         <a href="/blog/add-new" class="nav-link">Add Blog</a>
 
+        <!-- User Dropdown Menu -->
         <div class="dropdown">
-          <button class="dropdown-toggle" id="userDropdown">
-            <%= loggedInUser.full_Name %> ▼
+          <button 
+            class="dropdown-toggle" 
+            id="userDropdown" 
+            aria-haspopup="true" 
+            aria-expanded="false" 
+            aria-controls="dropdown-menu"
+          >
+            <%= loggedInUser.full_Name %> 
           </button>
-          <div class="dropdown-menu" id="dropdown-menu">
-            <a href="/profile" class="dropdown-item">Your Profile</a>
-            <a href="/user/logout" class="dropdown-item">Logout</a>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu" aria-labelledby="userDropdown">
+            <a href="/profile" class="dropdown-item" role="menuitem">Your Profile</a>
+            <a href="/user/logout" class="dropdown-item" role="menuitem">Logout</a>
           </div>
         </div>
       <% } else { %>
@@ -23,6 +32,15 @@
       <% } %>
     </div>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+    <!-- Mobile Menu Toggle Button -->
+    <button 
+      class="menu-toggle" 
+      id="menu-toggle" 
+      aria-label="Toggle menu" 
+      aria-expanded="false" 
+      aria-controls="nav-links"
+    >
+      ☰
+    </button>
   </div>
 </nav>
