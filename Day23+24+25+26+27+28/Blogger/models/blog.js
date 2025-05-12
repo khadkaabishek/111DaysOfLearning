@@ -2,6 +2,12 @@ const { Schema, model, default: mongoose } = require("mongoose");
 
 const blogSchema = new mongoose.Schema(
   {
+    likes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
     title: {
       type: String,
       required: true,

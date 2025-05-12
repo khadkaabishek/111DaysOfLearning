@@ -1,54 +1,33 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark " data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Bloggg </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="/blog/our-blogs">Our Blogs</a>
-          </li>
-          <% if (locals.loggedInUser) { %>
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/add-new">Add Blog</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              >
-              <%= loggedInUser.full_Name %>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/profile">Your Profile</a>
-          </li>
-            <% } else {%>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/signup">Create Account</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/user/signin">Signin</a>
-            </li>
-            <% } %>
-            
-        </ul>
-      </div>
-    </div>
-  </nav>
+<nav class="custom-navbar">
+  <div class="container">
+    <a href="/" class="brand">Bloggg</a>
 
-  <% if (locals.error) { %>
-    <div class="container mt-4">
-      <div class="alert alert-danger" role="alert">  <%=locals.error  %> </div>
+    <div class="nav-links" id="nav-links">
+      <a href="/blog/our-blogs" class="nav-link">Our Blogs</a>
+
+      <% if (locals.loggedInUser) { %>
+        <a href="/blog/add-new" class="nav-link">Add Blog</a>
+
+        <div class="dropdown">
+          <button class="dropdown-toggle" id="userDropdown">
+            <%= loggedInUser.full_Name %> ▼
+          </button>
+          <div class="dropdown-menu" id="dropdown-menu">
+            <a href="/profile" class="dropdown-item">Your Profile</a>
+            <a href="/user/logout" class="dropdown-item">Logout</a>
+          </div>
+        </div>
+      <% } else { %>
+        <a href="/user/signup" class="nav-link">Create Account</a>
+        <a href="/user/signin" class="nav-link">Signin</a>
+      <% } %>
+
+      <form action="/search" method="GET" class="search-form">
+        <input type="text" name="q" placeholder="Search blogs..." aria-label="Search blogs" required>
+        <button type="submit">Search</button>
+      </form>
     </div>
-  <% } %>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</nav>

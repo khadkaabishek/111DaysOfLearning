@@ -11,7 +11,7 @@ router.get("/signin", (req, res) => {
 });
 router.post("/signup", async (req, res) => {
   const { full_name, email, password } = req.body;
-  if (!full_name) return res.render("signout");
+  if (!full_name) return res.render("signup");
   const user = await User.create({
     full_Name: full_name,
     email: email,

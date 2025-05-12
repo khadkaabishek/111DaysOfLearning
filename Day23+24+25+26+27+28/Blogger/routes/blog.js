@@ -88,4 +88,27 @@ router.post("/add-new", upload.single("coverImage"), async (req, res) => {
   return res.redirect("/");
 });
 
+router.post("/:id/like", async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    const userId = req.user._id;
+
+    if (!blog) return res.status(404).send("Blog not found");
+
+    const liked = blog.likes.includes(userId);
+
+    if (liked) {
+      blog.likes.pull(userId); // Unlike
+    } else {
+      blog.likes.push(userId); // Like
+    }
+
+    await blog.save();
+    res.redirect("/blog/" + req.params.id); // Or wherever you show the blog
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;
