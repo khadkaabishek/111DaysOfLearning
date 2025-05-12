@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head.ejs') %>
-    <title>Home</title>
+  <%- include('./partials/head.ejs') %>
+  <title>Profile - <%= user.full_Name %></title>
+  <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
-    <%- include('./partials/nav.ejs') %>
+  <%- include('./partials/nav.ejs') %>
 
+  <main class="profile-container">
+    <section class="profile-card">
+      <img src="<%= user.profileImageUrl %>" alt="Profile Image of <%= user.full_Name %>" class="profile-image" />
 
-    <div class="profile-page">
-        <div class="profile-card">
-            <img src="<%= locals.user.profileImageUrl %>" alt="Profile Image" class="profile-image">
+      <h1 class="profile-name"><%= user.full_Name %></h1>
 
-          <h2 class="profile-name"><%= user.full_Name %></h2>
-          <p class="profile-info"><strong>ID:</strong> <%= user._id %></p>
-          <p class="profile-info"><strong>Email:</strong> <%= user.email %></p>
-        </div>
+      <div class="profile-details">
+        <p><strong>User ID:</strong> <span><%= user._id %></span></p>
+        <p><strong>Email:</strong> <span><%= user.email %></span></p>
       </div>
-
-      <a href=""></a>
+    </section>
+  </main>
 </body>
-
+<script src = "/scripts/script.js"></script>
 </html>

@@ -34,7 +34,7 @@ app.get("/", async (req, res) => {
     "createdBy",
     "full_Name profileImageUrl"
   );
-  console.log(ourBlog);
+  // console.log(ourBlog);
   const userdata = await UserData.find({});
   return res.render("ourBlog", {
     loggedInUser: req.user,

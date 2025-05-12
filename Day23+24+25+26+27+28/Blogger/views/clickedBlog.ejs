@@ -4,6 +4,7 @@
   <%- include('./partials/head.ejs') %>
   <title><%= blog.title %></title>
   
+  <link rel="stylesheet" href="/css/clickedBlog.css">
 </head>
 <body>
   <%- include('./partials/nav.ejs') %>
@@ -35,7 +36,7 @@
         </div>
         <section class="comment-section">
           <h3>Leave a Comment:</h3>
-          <form class="comment-form" action="/blog/<%= blog._id%>" method="POST">
+          <form class="comment-form" action="/blog/<%= blog._id%>/comment" method="POST">
             <textarea name="comment" rows="4" placeholder="Write your comment here..." required></textarea>
             <br>
             <button type="submit">Submit</button>
@@ -64,7 +65,7 @@
       </div>
     </article>
   </main>
-  <%- include('./partials/scripts.ejs') %>
-</body>
 
+</body>
+<script src = "/scripts/script.js"></script>
 </html>

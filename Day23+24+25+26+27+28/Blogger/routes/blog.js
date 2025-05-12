@@ -26,9 +26,9 @@ router.get("/our-blogs", async (req, res) => {
     "createdBy",
     "full_Name profileImageUrl"
   );
-  console.log(ourBlog);
+  // console.log(ourBlog);
   const allUser = await User.find({});
-  console.log(allUser);
+  // console.log(allUser);
   return res.render("ourBlog", {
     loggedInUser: req.user,
     blogs: ourBlog,
@@ -49,7 +49,7 @@ router.get("/:id", async (req, res) => {
       "full_Name profileImageUrl"
     );
 
-    console.log(comments[0]);
+    // console.log(comments[0]);
     if (!clickedBlog || !owner) {
       return res.status(404).send("Blog or User not found");
     }
@@ -66,7 +66,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/:id", async (req, res) => {
+router.post("/:id/comment", async (req, res) => {
   await Comment.create({
     comment: req.body.comment,
     blog: req.params.id,
@@ -78,7 +78,7 @@ router.post("/:id", async (req, res) => {
 
 router.post("/add-new", upload.single("coverImage"), async (req, res) => {
   const body = req.body;
-  console.log(body);
+  // console.log(body);
   const blog = await Blog.create({
     title: body.title,
     body: body.body,
