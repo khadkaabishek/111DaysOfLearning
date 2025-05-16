@@ -24,16 +24,17 @@ app.get("/", (req, res) => {
   // stream.on("end", () => res.end());
 });
 
-app.get("/with_streaming", (req, res) => {
-  const stream = fs.createReadStream("./100mb-examplefile-com.txt", "utf-8");
+//OR
+// app.get("/with_streaming", (req, res) => {
+//   const stream = fs.createReadStream("./100mb-examplefile-com.txt", "utf-8");
 
-  stream.on("error", (err) => {
-    res.statusCode = 500;
-    res.end("File read error: " + err.message);
-  });
+//   stream.on("error", (err) => {
+//     res.statusCode = 500;
+//     res.end("File read error: " + err.message);
+//   });
 
-  stream.pipe(res);
-});
+//   stream.pipe(res);
+// });
 
 app.listen(PORT, () => {
   console.log(`Server Started at Port : ${PORT}`);
