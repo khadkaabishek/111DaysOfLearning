@@ -1,0 +1,104 @@
+
+
+# TypeScript Modules, Imports, Exports & Common Issues
+
+1. Module System in TypeScript
+
+---
+
+* TypeScript uses ES modules for code organization.
+* You can export functions, variables, or classes from a file and import them in other files.
+
+Example:
+export function greet() { ... }
+import { greet } from './myLib';
+
+2. Export Types
+
+---
+
+* Named Export: `export function greet() {}` → `import { greet } from './file'`
+* Default Export: `export default function greet() {}` → `import greet from './file'`
+* Multiple Exports:
+  export const a = 10;
+  export function b() {}
+
+3. Import Paths in TypeScript
+
+---
+
+* Always use **relative paths** when importing your own modules.
+* Example: `import { greet } from './myLib';`
+* Avoid omitting `./` or using only module names unless they are node modules.
+
+4. Common Compilation Issue: Missing ".js" Extension
+
+---
+
+* TypeScript files (`.ts`) are compiled into `.js` files.
+
+* If you're using ES modules and run the compiled files in Node.js or browser, you MUST use `.js` in your import paths:
+
+   Correct: `import { greet } from './myLib.js';`
+
+   Wrong: `import { greet } from './myLib';` → Fails after compilation
+
+* TypeScript does **not** automatically add ".js" in import statements during compilation.
+
+5. tsconfig.json Setup (ES Modules)
+
+---
+
+To use ES modules, your `tsconfig.json` should include:
+"compilerOptions": {
+"module": "ES6",
+"target": "ES6",
+"moduleResolution": "node",
+"outDir": "dist",
+"rootDir": "src"
+}
+
+6. Casing Issues on File Names
+
+---
+
+* File systems like macOS and Linux are **case-sensitive**.
+* This means `myLib.ts` ≠ `mylib.ts`
+* TypeScript will throw TS1149 error if you import using the wrong casing.
+  Example:
+  File: `myLib.ts`
+  `import { greet } from './mylib';` → Error
+  `import { greet } from './myLib';` → Correct
+
+7. Ways to Handle the ".js" Extension Issue
+
+---
+
+a. Manually add `.js` in your import paths in `.ts` files:
+
+* `import { greet } from './myLib.js';`
+
+b. Use a build tool like Vite, Webpack, or Rollup:
+
+* These tools bundle your code and remove the need to worry about file extensions.
+
+c. Use a post-compilation script:
+
+* Tools like `tscpaths` can auto-fix paths in your `dist` folder.
+
+8. General Best Practices
+
+---
+
+* Always use consistent casing for file names.
+* Use `.js` in imports when targeting ES modules.
+* Prefer named exports for clarity and better tree-shaking.
+* Keep all source files in a `src` folder and compiled files in `dist`.
+
+## Summary
+
+    Use correct relative paths (`./`)
+    Add `.js` in imports when compiling to ES modules
+    Maintain consistent casing in file names
+    Use bundlers in real projects to simplify everything
+    Configure `tsconfig.json` properly to match your output strategy
