@@ -1,6 +1,6 @@
 
 
-🌟 **Day 4 of Learning** 🌟
+🌟 **Day 51 of Learning** 🌟
 Today, I explored how TypeScript handles **Error Handling** and **Advanced Types** — including how to create custom errors and extract types safely.
 
 ---
