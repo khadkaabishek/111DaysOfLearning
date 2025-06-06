@@ -2,7 +2,7 @@
 
 
 
-🌟 Day 6 of Learning 🌟
+🌟 Day 53 of Learning 🌟
 Today, I explored how to set up TypeScript in my Node.js application — from installation to handling 
 real-world compiler errors and learning how Express types really work.
 
