@@ -1,10 +1,23 @@
-import React from 'react';
-interface buttonProps{
-    name : string;
-    onClick?:()=>void;
-}
-const myButton : React.FC<buttonProps> = (props)=>{
-    const {name,onClick=()=>{}} = props;
-    return <button onClick={onClick}>{name}</button>;
-}
-export default myButton;
+import React, { useState } from 'react';
+
+interface ButtonProps {
+  name: string;
+  onClick?: () => void;
+}const MyButton: React.FC<ButtonProps> = ({ name, onClick = () => {} }) => {
+  const [value, setValue] = useState<number>(1);
+  return (
+    <>
+      <h3>{value}</h3>
+      <button
+        onClick={() => {
+          setValue(value + 1);
+          
+        }}
+      >
+        {name}
+      </button>
+    </>
+  );
+};
+
+export default MyButton;
