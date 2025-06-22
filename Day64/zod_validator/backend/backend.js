@@ -19,7 +19,7 @@ const validate = (schema) => {
     } catch (err) {
       return res.status(400).json({ errors: err.errors });
     }
-  };
+  };``
 };
 
 app.post('/register', validate(registerSchema), (req, res) => {
@@ -29,3 +29,6 @@ app.post('/register', validate(registerSchema), (req, res) => {
 app.listen(5001, () => {
   console.log('Server running on http://localhost:5001');
 });
+
+
+
