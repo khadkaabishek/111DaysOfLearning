@@ -1,0 +1,22 @@
+
+🌟 Day 78 of #111DaysOfLearningForChange 🌟
+Today, I worked on building the frontend logic for a cart management system in React,
+ where users can select how many items they want to add to their cart — while respecting 
+ the available stock limit 🚀🎯
+
+🎯 What I worked on:
+
+1. Added a quantity selection system that lets users pick between 1 and the product’s
+ `noOfQuantityAvailable`
+2. Displayed `noOfQuantityAvailable` on the product detail view to guide user decisions
+3. Set up an “Add to Cart” button that sends the product ID, selected quantity, and color 
+to the backend (backend part coming soon)
+4. Improved conditional UI rendering for roles:
+5. Made sure the quantity logic is strictly enforced to avoid invalid purchases
+
+🔗 GitHub Repo: 
+
+Frontend interactions are now more realistic and smarter – super happy to see quantity logic +
+ role-based UI working together! 🙌🛒
+
+#Day78LearningForChange  #CodeForChange
