@@ -1,0 +1,20 @@
+
+🌟 Day 80 of #111DaysOfLearningForChange 🌟
+Today, I worked on enhancing the user cart functionality — users can now add, 
+remove, and manipulate quantities of items in the cart. The cart dynamically updates
+ the total payable amount using the `.reduce()` method, which I revisited after quite some time! 🛒🧠
+
+🎯 What I worked on:
+
+1. Enabled dynamic quantity manipulation with `+` and `–` buttons directly in the cart.
+2. Implemented item removal logic for better user control.
+3. Calculated the total payable amount in real-time using the `.reduce()` method.
+4. Added safeguards to prevent setting quantity below 1 or exceeding available stock.
+5. Enhanced cart UI for better interactivity and price transparency.
+
+GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-80/E_commerce_App🔗
+
+The cart now feels much more interactive, realistic, and user-friendly — a major step forward in the shopping experience! 🚀✨
+
+#Day80LearningForChange #CodeForChange #ReactJS #JavaScript #FrontendDevelopment #MERNStack #WebDevelopment
+
