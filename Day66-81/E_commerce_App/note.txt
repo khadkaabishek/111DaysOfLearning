@@ -1,0 +1,21 @@
+
+🌟 Day 81 of #111DaysOfLearningForChange 🌟
+Today, I worked on enhancing the admin-side item editing feature — 
+now admins can easily update existing product details in case of 
+errors or any necessary changes. This adds flexibility and ensures
+ data accuracy across the platform! 🛠️
+
+🎯 What I worked on:
+
+1. Fetched existing product data and pre-filled it into an editable form using `GET`.
+2. Allowed admin to update product fields like name, description, price, quantity, and category.
+3. Enabled multiple image uploads with preview support using `FormData` and `multer`.
+4. Sent updated data via a secure `PUT` request to `/api/put_item/:id`.
+5. Updated backend logic to handle both text and image data using `multipart/form-data`.
+
+GitHub Repo:
+
+The admin panel is now more robust and production-ready,
+allowing seamless edits to product listings with image management! 🚀✨
+
+#Day81LearningForChange #CodeForChange #ReactJS #NODE
