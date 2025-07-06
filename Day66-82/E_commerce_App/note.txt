@@ -1,0 +1,18 @@
+
+🌟 Day 82 of #111DaysOfLearningForChange 🌟
+Today, I implemented a confirmation popup system for deleting products — users must now confirm before
+ any deletion action is processed. This adds a vital layer of protection and ensures only the rightful
+  owner can perform the delete action. 🔒🗑️
+
+🎯 What I worked on:
+1. Designed a modal popup that triggers when a user clicks the Delete button.
+2. Implemented confirmation options: Yes, Delete and Cancel* enhancing UX safety.
+3. Performed secure deletion via a `DELETE` request only if the product belongs to the logged-in user.
+4. Validated ownership on the backend by matching the JWT token's user ID with the product’s `owner`.
+5. Ensured only authorized deletions by sellers/admins, boosting platform reliability.
+
+GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-82/E_commerce_App
+The seller panel is now safer and more responsible — empowering users with full control over their
+ listings without risk of accidental deletion! 🚀✅
+
+#Day82LearningForChange #CodeForChange #ReactJS #NODE #UXMatters #MERNstack #JWTAuth #AdminTools
