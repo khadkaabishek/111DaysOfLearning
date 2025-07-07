@@ -1,0 +1,17 @@
+
+🌟 Day 83 of #111DaysOfLearningForChange 🌟
+Today, I enhanced the seller experience by adding visibility, control, and ownership protection on the platform.
+ Sellers can now manage only their products, and each product clearly shows who uploaded it — boosting trust and clarity. 👤🛍️
+
+🎯 What I worked on:
+1. Allowed sellers to **edit products only if they are the original uploader — ensuring secure ownership validation.
+2. Created a dedicated seller dashboard page that shows only the logged-in seller’s items.
+3. Utilized Mongoose’s `.populate()` method to display seller name and email on product detail pages.
+4. Fixed various bugs and overlooked issues from previous implementations to stabilize user experience.
+
+GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-83/E_commerce_App
+The seller system now offers clearer identity, restricted access control, and smoother management —
+ a solid step toward a secure and scalable marketplace experience! 🚀✅
+
+#Day83LearningForChange #CodeForChange #ReactJS #NODE #UXMatters #MERNstack
+
