@@ -1,0 +1,16 @@
+
+🌟 Day 84 of #111DaysOfLearningForChange 🌟
+Today, I built the backend for user interactions — enabling users to like and comment 
+on products, all while ensuring secure authentication and clean backend structure. 💬🔐❤️
+
+🎯 What I worked on:
+1. Created an Interaction model with attributes like `isLiked`, `comment`, `user`, and `product`.
+2. Wrote controllers for posting and retrieving interactions from the database.
+3. Developed a separate middleware to verify JWT tokens — keeping endpoints secure and clean.
+4. Used Postman to test all API endpoints and verify smooth data flow and response handling.
+
+GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-84/E_commerce_App
+
+Excited !!
+
+#Day84LearningForChange #CodeForChange #ReactJS #NODE #UXMatters #MERNstack
