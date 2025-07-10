@@ -1,0 +1,23 @@
+
+
+🌟 Day 86 of #111DaysOfLearningForChange 🌟
+Today, I focused on building a charming and user-friendly Seller Onboarding UI — allowing normal users to 
+seamlessly apply to become official sellers on the platform. 🛍️💼✨
+
+🎯 What I worked on:
+
+1. Created a complete React-based Seller Onboarding page inspired by Daraz's UX principles.
+2. Built modular components including:
+
+   * A dynamic hero section with a call-to-action to scroll to the form
+   * Informational sections explaining why users should sell on our platform
+   * A clean and responsive application form for seller registration
+   * FAQ section for resolving common doubts
+3. Implemented a preview feature that shows sample NID document format before upload.
+4. Allowed users to upload official documents (NID front/back, address proof) via a form with `multipart/form-data`.
+
+📂 GitHub Repo: 
+
+Making steady progress! 💪
+#Day40LearningForChange #CodeForChange #ReactJS #UXMatters #FrontendDevelopment
+
