@@ -1,0 +1,23 @@
+
+
+🌟 Day 86 of #111DaysOfLearningForChange 🌟
+Today, I focused on improving both the frontend and backend for the Seller 
+Onboarding feature — making the process smoother, clearer, and more appealing
+ for users who want to become official sellers. 🛍️✨
+
+🎯 What I worked on:
+
+1. Designed a clean and structured UI by organizing key components side by side 
+— emphasizing the main application area.
+2. Enhanced the sample image preview popup — added a background blur effect to 
+highlight the preview and guide the user experience better.
+3. Created a MongoDB schema and model to store seller application data — including 
+fields for validation and approval flow.
+4. Set up proper backend routing to manage seller-related data and connect it seamlessly with the frontend.
+
+⚙️ Next Up:
+Improving backend validation, admin approval workflow, and sending confirmation 
+messages after application submission.
+
+Making exciting progress toward launch! 🚀
+#Day86LearningForChange #MERNStack  #CodeForChange #ReactJS #NodeJS #WebDevelopment 
