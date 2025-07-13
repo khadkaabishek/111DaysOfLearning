@@ -1,0 +1,21 @@
+
+🌟 Day 89 of #111DaysOfLearningForChange 🌟
+Today, I focused on building the Admin Panel frontend — creating a secure and 
+structured interface accessible only to users with the `admin` role. This forms 
+the foundation for managing users, seller applications, and approvals. 🛡️🧑‍💻🗂️
+
+🎯 What I worked on:
+
+1. Added role-based routing logic to redirect admins to the dashboard after successful login.
+2. Created a loading component to verify user roles before rendering any admin content — preventing unauthorized access or glitches.
+3. Built structured admin views:
+
+   * Users Page to view all registered customers.
+   * Sellers Page to monitor onboarded sellers.
+   * Requests Page to review and act on pending seller applications.(dummy data for now)
+
+📦 Github Repo: 
+
+Super excited to see the admin dashboard taking shape — next step: implement approval actions and real-time status updates! 🚀
+#Day89LearningForChange #MERNStack #AdminDashboard #ReactJS #NodeJS #MongoDB #WebDevelopment #FullStackJourney
+
