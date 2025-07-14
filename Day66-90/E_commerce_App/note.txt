@@ -1,0 +1,21 @@
+🌟 Day 90 of #111DaysOfLearningForChange 🌟
+Today, I focused on building the backend logic for admin controls — 
+enabling a secure and scalable way to manage seller applications.
+ This completes the foundation for handling seller approvals right from the admin dashboard. 🧠🔐🧾
+
+🎯 What I worked on:
+
+1. Added `userID` as a reference in the seller application schema to
+ uniquely associate each request with a user.
+2. Built a controller to fetch all seller requests, allowing admins 
+to view pending and reviewed applications.
+3. Created a `PATCH` route to approve or reject seller applications 
+based on admin actions from the frontend.
+4. Used Postman to test and validate all endpoints for smooth frontend integration.
+
+📦 GitHub Repo: 
+
+Excited to connect these backend features with real frontend buttons next —
+bringing seller approval logic to life with live updates and cleaner UX! 🚀
+#Day90LearningForChange #MERNStack #ReactJS #NodeJS
+
