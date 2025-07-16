@@ -1,0 +1,17 @@
+
+🌟 Day 92 of #111DaysOfLearningForChange 🌟
+Today, I implemented the notification feature on my platform — making the system more interactive and user-friendly by keeping users informed about critical updates like seller request approvals or rejections. 🔔✅📢
+
+🎯 What I worked on:
+
+1. Created a notification icon with dropdown functionality for a seamless user experience.
+2. Designed and implemented a Notification Schema to store user-specific notifications in the database.
+3. Wrote condition-based messages (e.g., approval → success message, rejection → rejection message).
+4. Integrated backend and frontend to fetch and display notifications without needing Postman for API testing — feels like my concepts are really solidifying!
+
+📦 GitHub Repo:
+
+Excited to move towards real-time notifications using WebSockets or Pusher next! 🚀🔥
+
+#Day92LearningForChange #CodeForChange #MERNStack #ReactJS #NodeJS #BackendDevelopment #NotificationSystem #LearningWithLeapfrog
+
