@@ -1,0 +1,14 @@
+
+🌟 Day 99 of #111DaysOfLearningForChange 🌟
+Today, I continued developing the seller-side functionality, enabling sellers to clearly view orders and understand the billing for each transaction. This brings us closer to a complete, two-sided order management system. 📦💼📊
+
+🎯 What I worked on:
+
+1. Built a dedicated Orders section for sellers, allowing them to review incoming buyer orders.
+2. Integrated a comprehensive Bill section within each order, showing full purchase details including product info, quantity, pricing, and buyer data.
+
+📌 GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-99/E_commerce_App
+
+Excited to move forward — next up: enabling sellers to manage delivery statuses! 🔥
+
+#Day99LearningForChange #CodeForChange #MERNStack #UXImprovements #SellerDashboard #OrderManagement #FullStackDevelopment
