@@ -1,0 +1,17 @@
+
+
+🌟 Day 97 of #111DaysOfLearningForChange 🌟
+Today, I continued refining the order placement backend, making it smarter and more connected. The focus was on syncing buyer actions with seller visibility and prepping the system to show complete order data soon! 🔁🛍️💬
+
+🎯 What I worked on:
+
+1. Pushed selected cart items into the Orders collection when a buyer places an order.
+2. Used nested `.populate()` to fetch detailed data, including product and user info.
+3. Retrieved both buyer and corresponding seller information to be linked with the order.
+4. Implemented notification logic, alerting sellers instantly when a new order is placed.
+
+📌 GitHub Repo:https://github.com/khadkaabishek/111DaysOfLearning/blob/main/Day66-97/E_commerce_App/
+
+Excited to display all orders on the frontend next — stay tuned! 🔥
+
+#Day97LearningForChange #CodeForChange #MERNStack #BackendDevelopment #OrderSystem #APIs #FullStackProgress
