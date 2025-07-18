@@ -1,0 +1,19 @@
+
+
+🌟 Day 96 of #111DaysOfLearningForChange 🌟
+Today, I focused on writing the backend logic for placing orders, 
+which marks a major step in connecting the checkout flow to the database and making orders functional! 🛠️🛒📦
+
+🎯 What I worked on:
+
+1. Set up API integration to send order data from the frontend to the
+ backend seamlessly.
+2. Designed an Order Schema in the database, referencing both user and 
+product collections for proper data linkage.
+3. Structured the backend using the MVC architecture, ensuring cleanrouting, better code organization, and scalability.
+
+📌 GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/blob/main/Day66-96/E_commerce_App/note.txt
+
+Excited for what’s next — looking forward to adding order tracking and admin controls! 🔥
+
+#Day96LearningForChange #CodeForChange #MERNStack #BackendDevelopment #APIs #MVCArchitecture #FullStackJourney
