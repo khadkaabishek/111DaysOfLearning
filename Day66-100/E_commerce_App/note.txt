@@ -1,0 +1,15 @@
+
+🌟 Day 100 of #111DaysOfLearningForChange 🌟
+Today marks a big milestone! I focused on building out the delivery status management system, bridging the final gap between sellers dispatching orders and buyers confirming deliveries. This flow adds accountability and clarity to every transaction. 🚚✅📬
+
+🎯 What I worked on:
+
+1. Implemented a “Dispatched” button for sellers to update delivery progress once an order leaves their hands.
+2. Enabled sellers to mark orders as “Delivered”, which automatically triggers notifications to the buyer.
+3. Added a buyer-side verification step to confirm receipt — especially useful for Cash on Delivery cases.
+
+📌 GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-100/E_commerce_App
+
+Excited to keep going — the system is becoming more user-friendly and real-world ready! 🔥
+
+#Day100LearningForChange #CodeForChange #MERNStack #UXImprovements #DeliveryTracking #OrderManagement #FullStackDeveloper
