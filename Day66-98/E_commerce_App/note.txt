@@ -1,0 +1,16 @@
+
+🌟 Day 98 of #111DaysOfLearningForChange 🌟
+Today, I continued refining the order flow on both frontend
+ and backend, aiming for a seamless buyer experience and clean 
+ data management post-purchase. It’s all coming together step by step! 🧾🛠️🛒
+
+🎯 What I worked on:
+
+1. Made a slight change in the Order Schema — now taking a snapshot of the cart at the time of order to preserve product details and safely clear the cart afterward.
+2. Developed a “My Orders” page where buyers can view all their orders along with relevant details, ensuring transparency and easy access to purchase history.
+
+📌 GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-98/E_commerce_App
+
+Excited to continue — seller-side order management coming next! 🔥
+
+#Day98LearningForChange #CodeForChange #MERNStack #UXImprovements #FullStackDevelopment #OrderManagement #FrontendAndBackend
