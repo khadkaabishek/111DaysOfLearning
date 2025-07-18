@@ -1,0 +1,21 @@
+
+🌟 Day 94 of #111DaysOfLearningForChange 🌟
+Today, I focused on enhancing the Cart UI to streamline 
+the payment process and give users a clear understanding 
+of their order summary. A good cart experience builds 
+confidence before checkout! 🛒💳
+
+🎯 What I worked on:
+
+1. Designed a responsive Cart UI split into two sections 
+— one for cart items, and another for billing info.
+2. Added a detailed Bill Summary section displaying total 
+payable amount.
+3. Introduced a default ₹100 shipping fee, auto-applied 
+to orders for now.
+
+📌 GitHub Repo: 
+
+Excited for what’s next! 🔥
+
+#Day94LearningForChange #CodeForChange #MERNStack #UXImprovements #CartDesign #UIUX
