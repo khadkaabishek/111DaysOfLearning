@@ -1,0 +1,15 @@
+
+🌟 Day 101 of #111DaysOfLearningForChange 🌟
+Today, I implemented a fully functional search ba feature by enabling smooth communication between components — helping users discover items quickly and intuitively. 🔍⚡🧩
+
+🎯 What I worked on:
+
+1. Built a responsive `SearchBar` component to handle user input efficiently.
+2. Lifted the search query state up to the parent dashboard for centralized control.
+3. Filtered and passed real-time results to the child display component.
+
+📌 GitHub Repo: 
+
+Swipe to see the code & demo! Next up: regex filters and custom sorting — search is just the beginning. 🚀🛒
+
+#Day101LearningForChange #CodeForChange #ReactJS #SearchFunctionality #MERNStack #StateLifting #UXMatters #FullStackJourney
