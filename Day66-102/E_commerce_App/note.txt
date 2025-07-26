@@ -1,0 +1,13 @@
+
+🌟 Day 102 of #111DaysOfLearningForChange 🌟
+Today, I separated products by categories and created a draggable price filter — enhancing the browsing experience by letting users filter products intuitively and interactively. 🛍️🎚️✨
+
+🎯 What I worked on:
+Grouped products dynamically based on their categories for easier navigation.
+Built a smooth, draggable price filter component to control min-max values.
+Integrated category and price filtering to improve real-time product discovery.
+
+📌 GitHub Repo: 
+
+Much Excited 🚀🛒
+#Day102LearningForChange #CodeForChange #ReactJS #ProductFiltering #MERNStack #UXDesign
