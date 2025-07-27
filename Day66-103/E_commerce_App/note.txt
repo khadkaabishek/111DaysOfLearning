@@ -1,0 +1,16 @@
+
+🌟 Day 103 of #111DaysOfLearningForChange 🌟
+Today, I explored OAuth 2.0, the standard behind those “Login with Google/Facebook” buttons — diving into how authentication and authorization actually work under the hood. 🔐🌐✨
+
+🎯 What I worked on:
+i) Understood the full OAuth 2.0 flow — including generation and verification of authorization codes.
+ii) Set up my first Google OAuth Client ID via Google Cloud Console.
+iii) Rendered a basic Google Sign-In button and triggered the account selection popup.
+iv) Faced a COOP-related error during implementation — noted it down to fix later.
+
+📌 GitHub Repo: https://github.com/khadkaabishek/111DaysOfLearning/tree/main/Day66-103/E_commerce_App
+
+✅ Gained a solid understanding of third-party authentication systems.
+Next up: Debug COOP issue and connect the OAuth data to backend storage! 🚀🔧
+
+#Day103LearningForChange #CodeForChange #OAuth2 #MERN #GoogleSignIn #ReactJS
