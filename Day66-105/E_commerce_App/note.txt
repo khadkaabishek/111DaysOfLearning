@@ -1,0 +1,16 @@
+
+🌟 Day 105 of #111DaysOfLearningForChange 🌟
+
+Today was all about fixing issues that came up after adding new features — and making sure the UI and logic flow stay smooth and sharp. ⚙️🧠
+
+🎯 What I worked on:
+i) Fixed an infinite re-render issue with the draggable price filter by wrapping the handler in `useCallback`.
+ii) Resolved a confusing bug where Google login was returning `_id` but my code was using `id`. Adjusted logic and MongoDB schema accordingly.
+iii) Handled long product names in the billing layout — no more overflow madness!
+
+📌 GitHub Repo: 
+
+✅ Codebase is feeling cleaner, smarter, and more stable.
+Super pumped to host this live soon and see it in action! 🚀
+
+#Day105LearningForChange #MERNStack #BugFixing #FullStackJourney
