@@ -1,0 +1,15 @@
+
+
+🌟 Day 108 of #111DaysOfLearningForChange 🌟
+Today, I worked on building the Seller Analytics page — giving sellers the power to track their sales performance over time! 📈🛒
+
+🎯 What I worked on:
+i) Fetched nested order data using advanced `.populate()` to extract daily sales linked to each seller.
+ii) Integrated `recharts` to show daily sales growth visually.
+iii) Utilized `date-fns` for formatting and filtering data by specific dates.
+iv) Cleaned and modularized the codebase with reusable service functions for better structure.
+
+📌 GitHub Repo: 
+
+Data-driven dashboards are coming alive — and I'm excited to keep pushing forward! 💪🚀
+#Day108LearningForChange #MERNStack #CodeForChange #FullStackJourney  #ReactJS #NodeJS 
