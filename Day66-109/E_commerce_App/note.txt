@@ -1,0 +1,16 @@
+
+
+🌟 Day 109 of #111DaysOfLearningForChange 🌟
+Today, I focused on product-level sales insights — helping sellers understand which products are performing best with clear visualizations! 🧠📊
+
+🎯 What I worked on:
+i) Built a pie chart view using `recharts` to break down product-wise sales contribution.
+ii) Cleaned and structured the backend API to serve seller-specific product analytics.
+iii) Ensured real-time inventory updates by reducing `quantityAvailable` after each order.
+iv) Enhanced visual clarity with better chart labeling and optimized data mapping.
+
+📌 GitHub Repo: 
+
+One step closer to building fully intelligent dashboards for smarter business decisions! 🧩🔥
+#Day109LearningForChange #CodeForChange #MERNStack #ReactJS #NodeJS #DataVisualization #FullStackDevelopment
+
